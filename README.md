@@ -1,6 +1,6 @@
 # Clubhouse.io REST API php Wrapper
 
-This is a lightweight php wrapper for the Clubhouse.io REST version 1 API.
+This is a lightweight php wrapper for the Clubhouse.io REST version 3 API.
 
 ## Installation
 
@@ -29,7 +29,7 @@ require_once('src/Clubhouse.php');
 Load the package namespace.
 
 ```php
-use Mikkelson\Clubhouse;
+use Nshonda\Clubhouse;
 ```
 
 Before making useful calls to Clubhouse, create an instance of `Clubhouse`, providing your Clubhouse API token, which you can get [here](https://app.clubhouse.io/settings/account/api-tokens).
@@ -56,7 +56,7 @@ $epic = $clubhouse->get('epics', $epic_id);
 
 ### Update
 
-Update Epic can be used to update numerous fields in the Epic. See [complete list of available fields](https://clubhouse.io/api/v1/#update-epic).
+Update Epic can be used to update numerous fields in the Epic. See [complete list of available fields](https://clubhouse.io/api/v3/#update-epic).
 
 ```php
 $epic_id = "4351";
@@ -89,7 +89,7 @@ $epics = $clubhouse->get('epics');
 
 ### Create
 
-Create Epic allows you to create a new Epic in Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v1/#create-epic).
+Create Epic allows you to create a new Epic in Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v3/#create-epic).
 
 ```php
 $new_epic = [
@@ -114,7 +114,7 @@ $file = $clubhouse->get('files', $file_id);
 ```
 ### Update
 
-Update File can used to update the properties of a file uploaded to Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v1/#update-file).
+Update File can used to update the properties of a file uploaded to Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v3/#update-file).
 
 ```php
 $file_id = "4351";
@@ -206,7 +206,7 @@ $linked_files = $clubhouse->get('linked-files', $link_id);
 
 ### Create
 
-Create Linked File allows you to create a new Linked File in Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v1/#create-linked-file)
+Create Linked File allows you to create a new Linked File in Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v3/#create-linked-file)
 
 ```php
 $new_link = [
@@ -221,7 +221,7 @@ $linked_file = $clubhouse->create('linked-files', $new_link);
 
 ### Update
 
-Updated Linked File allows you to update properties of a previously attached Linked-File. See [complete list of available fields](https://clubhouse.io/api/v1/#update-linked-file)
+Updated Linked File allows you to update properties of a previously attached Linked-File. See [complete list of available fields](https://clubhouse.io/api/v3/#update-linked-file)
 
 ```php
 $link_id = "1234";
@@ -266,7 +266,7 @@ $project = $clubhouse->get('projects', $project_id);
 
 ### Create
 
-Create Project is used to create a new Clubhouse Project. See [complete list of available fields](https://clubhouse.io/api/v1/#create-project)
+Create Project is used to create a new Clubhouse Project. See [complete list of available fields](https://clubhouse.io/api/v3/#create-project)
 
 ```php
 $new_project = [
@@ -280,7 +280,7 @@ $project = $clubhouse->create('projects', $new_project);
 
 ### Update 
 
-Update Project can be used to change properties of a Project.  See [complete list of available fields](https://clubhouse.io/api/v1/#update-project)
+Update Project can be used to change properties of a Project.  See [complete list of available fields](https://clubhouse.io/api/v3/#update-project)
 
 ```php
 $project_id = 1234;
@@ -315,7 +315,7 @@ $projects = $clubhouse->get('projects');
 
 ### Create
 
-Story links allow you create semantic relationships between two stories. Relationship types are relates to, blocks / blocked by, and duplicates / is duplicated by. The format is subject -> link -> object, or for example “story 5 blocks story 6”. See [complete list of available fields](https://clubhouse.io/api/v1/#create-story-link)
+Story links allow you create semantic relationships between two stories. Relationship types are relates to, blocks / blocked by, and duplicates / is duplicated by. The format is subject -> link -> object, or for example “story 5 blocks story 6”. See [complete list of available fields](https://clubhouse.io/api/v3/#create-story-link)
 
 ```php
 $new_link = [
@@ -353,7 +353,7 @@ $clubhouse->delete('story-links', $storylink_id);
 
 Search Stories lets you search Stories based on desired parameters. While all parameters are optional, you must include at least one parameter in order to receive a response.
 
-See [complete list of available search parameters](https://clubhouse.io/api/v1/#search-stories)
+See [complete list of available search parameters](https://clubhouse.io/api/v3/#search-stories)
 
 ```php
 $params = [
@@ -366,7 +366,7 @@ $stories = $clubhouse->create('stories/search', $params);
 
 ### Create
 
-Create Story is used to add a new story to your Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v1/#create-story)
+Create Story is used to add a new story to your Clubhouse. See [complete list of available fields](https://clubhouse.io/api/v3/#create-story)
 
 ```php
 $new_story = [
@@ -395,7 +395,7 @@ $story = $clubhouse->get('stories', $story_id);
 
 ### Update
 
-Update Story can be used to change properties of a Story.  See [complete list of available fields](https://clubhouse.io/api/v1/#update-story)
+Update Story can be used to change properties of a Story.  See [complete list of available fields](https://clubhouse.io/api/v3/#update-story)
 
 ```php
 $story_id = 1234;

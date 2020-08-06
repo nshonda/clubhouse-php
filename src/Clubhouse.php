@@ -1,6 +1,6 @@
 <?php
 
-namespace Mikkelson;
+namespace Nshonda;
 
 class ClubhouseException extends \Exception {
     
@@ -12,7 +12,7 @@ class Clubhouse {
     protected $token;
 
     /** @var string Clubhouse API endpoint */
-    protected $endpoint = 'https://api.clubhouse.io/api/v1/';
+    protected $endpoint = 'https://api.clubhouse.io/api/v3/';
 
     /*
      * Constructor
@@ -33,7 +33,7 @@ class Clubhouse {
         if (!empty($id)) {
             $uri = $uri . '/' . $id;
         }
-        return $this->request($uri, 'get');
+        return $this->request($uri, 'GET');
     }
 
     /*
@@ -50,7 +50,7 @@ class Clubhouse {
             return array('message' => 'You must provide an id and data to update');
         }
 
-        return $this->request($uri . '/' . $id, 'put', $data);
+        return $this->request($uri . '/' . $id, 'PUT', $data);
     }
 
     /*
@@ -67,7 +67,7 @@ class Clubhouse {
             return array('message' => 'You must provide an id to delete');
         }
 
-        return $this->request($uri . '/' . $id, 'delete');
+        return $this->request($uri . '/' . $id, 'DELETE');
     }
     
     /*
@@ -83,7 +83,7 @@ class Clubhouse {
             return array('message' => 'You must specify a resource to create, and provide data');
         }
 
-        return $this->request($uri, 'post', $data);
+        return $this->request($uri, 'POST', $data);
     }
 
     /*
@@ -94,7 +94,7 @@ class Clubhouse {
      * @return array
      */
 
-    private function request($uri, $type = 'get', $fields = null) {
+    private function request($uri, $type = 'GET', $fields = null) {
 
         $ch = curl_init($this->endpoint . $uri . '?token=' . $this->token);
         

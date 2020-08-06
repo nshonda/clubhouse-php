@@ -1,16 +1,15 @@
 {
-    "name": "mikkelson/clubhouse-php",
-    "description": "Lightweight php wrapper for Clubhouse.io V1 REST API",
-    "homepage": "https://github.com/mikkelson/clubhouse-php",
+    "name": "nshonda/clubhouse-php",
+    "description": "Lightweight php wrapper for Clubhouse.io V3 REST API",
+    "homepage": "https://github.com/nshonda/clubhouse-php",
     "keywords": ["clubhouse", "api", "php", "rest"],
     "license": "MIT",
     "authors": [
         {
-            "name": "James Mikkelson",
-            "homepage": "http://jamesmikkelson.com"
+            "name": "Natali Honda"
         }
     ],
     "autoload": {
-        "psr-4": {"Mikkelson\\": "src"}
+        "psr-4": {"Nshonda\\": "src"}
     }
 }
