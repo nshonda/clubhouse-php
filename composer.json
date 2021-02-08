@@ -15,10 +15,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/nshonda/clubhouse-php"
+            "url": "https://github.com/nshonda/clubhouse-php.git"
         }
-    ],
-    "require": {
-        "monolog/monolog": "dev-bugfix"
-    }
+    ]
 }
