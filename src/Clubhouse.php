@@ -87,6 +87,22 @@ class Clubhouse {
     }
 
     /*
+     * Clubhouse Search operations
+     * @param array $data
+     * @return array $stories
+     */
+
+    public function search($data) {
+
+        if (empty($data)) {
+            //return clubhouse style error
+            return array('message' => 'You must specify a resource to create, and provide data');
+        }
+
+        return $this->request('search/stories', 'GET', $data);
+    }
+
+    /*
      * Wraps and preforms curl request
      * @param string $uri api method
      * @param string $type http request test
