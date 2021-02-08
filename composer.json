@@ -11,5 +11,14 @@
     ],
     "autoload": {
         "psr-4": {"Nshonda\\": "src"}
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nshonda/clubhouse-php"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "dev-bugfix"
     }
 }
